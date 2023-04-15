@@ -10,7 +10,7 @@ The media-group plugin lets you handle & copy media-groups (albums) with ease.
 
 ## Features
 *   `video`, `audio`, `photo`, `document` support
-*   Support sends copy of a media group
+*   Supports sends copy of a media group
 
 ## Docs
 
@@ -33,10 +33,36 @@ yarn add @opengram/media-group
 pnpm add @opengram/media-group
 ```
 
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpengramJS%2Fmedia-group.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpengramJS%2Farguments?ref=badge_large)
+## Quick start
 
-[codecov-image]: https://codecov.io/gh/OpengramJS/media-group/branch/master/graph/badge.svg?token=7SSVHV4Y6V
+```js
+const { Opengram } = require('opengram')
+const { MediaGroup } = require('@opengram/media-group')
+const bot = new Opengram(process.env.BOT_TOKEN) // <-- put your bot token here (https://t.me/BotFather)
+const mediaGroup = new MediaGroup()
+bot.use(mediaGroup)
+
+bot.on('media_group', async ctx => {
+  // ctx.mediaGroup - array of messages
+  for (const message of ctx.mediaGroup) {
+    console.log(JSON.stringify(message, null, 2)) // Pretty-print media group messages to console
+  }
+
+  await ctx.copyMediaGroup(ctx.chat.id) // Copy media-group to current chat
+})
+
+bot.launch()
+
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop())
+process.once('SIGTERM', () => bot.stop())
+
+```
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpengramJS%2Fmedia-group.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpengramJS%2Fmedia-group?ref=badge_large)
+
+[codecov-image]: https://codecov.io/gh/OpengramJS/media-group/branch/master/graph/badge.svg?token=
 [codecov-url]: https://codecov.io/gh/OpengramJS/media-group
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://opensource.org/licenses/MIT
