@@ -1,0 +1,50 @@
+{
+  "source": {
+    "include": [
+      "src",
+      "README.md",
+      "package.json"
+    ]
+  },
+  "templates": {
+    "default": {
+      "outputSourceFiles": true
+    }
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "markdown": {
+    "idInHeadings": true
+  },
+  "opts": {
+    "encoding": "utf8",
+    "readme": "./README.md",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true,
+    "template": "./node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "title": "<div onclick=\"location.href = baseURL\" style=\"cursor:pointer;display: inline-flex;justify-content: center;align-items: center;user-select: none\"> <img alt=\"Opengram\" src=\"https://raw.githubusercontent.com/OpengramJS/opengram/master/docs/media/Logo.svg\" height=\"80\"> <h3>Opengram</h3> </div>",
+      "theme": "dark",
+      "meta": [
+        {
+          "name": "description",
+          "content": "The media-group plugin lets you handle & copy media-groups (albums) with ease."
+        }
+      ],
+      "menu": [
+        {
+          "title": "<b>Github</b>",
+          "id": "github",
+          "link": "https://github.com/OpengramJS/media-group"
+        },
+        {
+          "title": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg\" style=\"margin-top: 0.3rem;max-height: 1.2rem;\">",
+          "id": "npm",
+          "link": "https://www.npmjs.com/package/@opengram/media-group"
+        }
+      ]
+    }
+  }
+}
