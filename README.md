@@ -66,8 +66,8 @@ process.once('SIGTERM', () => bot.stop())
 [codecov-url]: https://codecov.io/gh/OpengramJS/media-group
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://opensource.org/licenses/MIT
-[codacy-image]: https://app.codacy.com/project/badge/Grade/123
-[codacy-url]: https://www.codacy.com/gh/OpengramJS/media-group/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=OpengramJS/opengram&amp;utm_campaign=Badge_Grade
+[codacy-image]: https://app.codacy.com/project/badge/Grade/3afaecc924bb4df985be63cf65fdf97d
+[codacy-url]: https://app.codacy.com/gh/OpengramJS/media-group/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
 [ci-image]: https://github.com/OpengramJS/media-group/actions/workflows/ci.yml/badge.svg?branch=master
 [ci-url]: https://github.com/OpengramJS/media-group/actions/workflows/ci.yml
 [npm-image]: https://img.shields.io/npm/v/@opengram/media-group.svg
