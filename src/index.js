@@ -161,17 +161,17 @@ class MediaGroup {
         store.set(ctx.chat.id, new Map())
       }
 
-      const userMap = store.get(ctx.chat.id)
+      const chatMap = store.get(ctx.chat.id)
 
-      if (!userMap.has(media_group_id)) {
+      if (!chatMap.has(media_group_id)) {
         d('Add message to store. Media-group ID: %d Chat ID: %d Update ID: %d', media_group_id, ctx.chat.id, ctx.update.update_id)
-        userMap.set(media_group_id, {
+        chatMap.set(media_group_id, {
           resolve: () => {},
           messages: []
         })
       }
 
-      const mediaGroupObject = userMap.get(media_group_id)
+      const mediaGroupObject = chatMap.get(media_group_id)
 
       mediaGroupObject.resolve(null)
 
@@ -197,9 +197,9 @@ class MediaGroup {
 
         ctx.updateSubTypes.push('media_group')
         d('Remove media group from Map. Media-group ID: %d Chat ID: %d Update ID: %d', media_group_id, ctx.chat.id, ctx.update.update_id)
-        userMap.delete(media_group_id)
+        chatMap.delete(media_group_id)
 
-        if (userMap.size === 0) {
+        if (chatMap.size === 0) {
           d('All media groups for chat processed, cleanup. Media-group ID: %d Chat ID: %d Update ID: %d', media_group_id, ctx.chat.id, ctx.update.update_id)
           store.delete(ctx.chat.id)
         }
