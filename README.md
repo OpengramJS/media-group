@@ -14,7 +14,7 @@ The media-group plugin lets you handle & copy media-groups (albums) with ease.
 
 ## Docs
 
-You can find documentation [here](media-group.opengram.dev) and examples [here](https://github.com/OpengramJS/media-group/tree/master/examples) and try now [here](https://replit.com/team/Opengram)
+You can find documentation [here](https://media-group.opengram.dev) and examples [here](https://github.com/OpengramJS/media-group/tree/master/examples) and try now [here](https://replit.com/team/Opengram)
 
 ## Installation
 
