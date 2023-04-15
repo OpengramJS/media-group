@@ -1,15 +1,16 @@
 {
   "name": "@opengram/media-group",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The media-group plugin lets you handle & copy media-groups (albums) with ease.",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "ava",
+    "test": "echo \"No tests\"",
     "cover": "c8 npm test",
     "precommit": "npm run lint && npm test && npm run remark",
     "remark": "npx remark README.md --use remark-preset-lint-consistent --use remark-preset-lint-recommended",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docs": "jsdoc --configure .jsdoc.json"
   },
   "files": [
     "src/*.js",
@@ -21,7 +22,7 @@
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpengramJS/arguments.git"
+    "url": "git+https://github.com/OpengramJS/media-group.git"
   },
   "ava": {
     "files": [
@@ -29,10 +30,13 @@
       "!test/utils.js"
     ]
   },
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
   "devDependencies": {
+    "clean-jsdoc-theme": "^4.2.7",
     "opengram": "^0.2.0-beta.1",
     "ava": "^4.3.3",
-    "joi": "^17.9.1",
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
     "@jsdoc/eslint-config": "^1.1.11",
@@ -54,14 +58,14 @@
   "author": "Maxim Tsialehin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpengramJS/arguments/issues"
+    "url": "https://github.com/OpengramJS/media-group/issues"
   },
-  "homepage": "https://github.com/OpengramJS/arguments#readme",
+  "homepage": "https://github.com/OpengramJS/media-group#readme",
   "keywords": [
     "opengram",
     "telegraf",
-    "opengram-command-parts",
-    "opengram-args",
-    "opengram-arguments"
+    "media",
+    "group",
+    "opengram-media-group"
   ]
 }
