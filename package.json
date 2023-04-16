@@ -14,7 +14,7 @@
   },
   "files": [
     "src/*.js",
-    "*.json"
+    "*[!.jsdoc|.c8rc].json"
   ],
   "engines": {
     "node": ">=16"
