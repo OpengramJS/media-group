@@ -144,6 +144,21 @@ class MediaGroup {
      * @param {Function} next
      */
     const mediaGroup = async (ctx, next) => {
+      /**
+       * Copies media group to chat with given id
+       *
+       * ```js
+       * bot.on('media_group', async ctx => {
+       *   await ctx.copyMediaGroup(123456) // 123456 - chat id
+       * })
+       * ```
+       * @param {number|string} chatId Unique identifier for the target chat or username of the target channel
+       *   (in the format @channelusername)
+       * @param {ExtraMediaGroup|Extra} extra Extra parameters
+       * @param {AbortSignal} signal Abort signal
+       * @this OpengramContext
+       * @return {Promise<Message[]>}
+       */
       ctx.copyMediaGroup = copyMediaGroup.bind(ctx)
 
       // eslint-disable-next-line camelcase
