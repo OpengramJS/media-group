@@ -1,7 +1,9 @@
 const { Opengram } = require('opengram')
 const { MediaGroup } = require('@opengram/media-group')
-const bot = new Opengram(process.env.BOT_TOKEN) // <-- put your bot token here (https://t.me/BotFather)
 const mediaGroup = new MediaGroup()
+
+const bot = new Opengram(process.env.BOT_TOKEN) // <-- put your bot token here (https://t.me/BotFather)
+
 bot.use(mediaGroup)
 
 bot.on('media_group', async ctx => {
