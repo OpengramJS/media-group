@@ -71,7 +71,7 @@ flowchart TB
   TO --> TOE("Timeout expired") --> ACTX
   HV --> U
 
-  ACTX("Add media group messages\nto ctx.mediaGroup and mark as media_group") --> NEX("Run next")
+  ACTX("Add media-group messages\nto <code>ctx.mediaGroup</code> and mark as <code>media_group</code>, run next") --> DM("Downstream middlewares")
 
   HV("Wait for new media")
 
