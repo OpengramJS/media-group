@@ -59,6 +59,28 @@ process.once('SIGTERM', () => bot.stop())
 
 ```
 
+## Flowchart
+```mermaid
+flowchart TB
+  U("Incoming update") --> M("Upstream middlewares")
+  M --> F("Filter by given update types")
+  F --> E("Has media group?")
+  E -- No --> N("Nothing to do, run next")
+  E -- Yes --> STSAV
+  MGLEN --> TO("Wait for <code>timeout</code>")
+  TO --> TOE("Timeout expired") --> ACTX
+  HV --> U
+
+  ACTX("Add media group messages\nto ctx.mediaGroup and mark as media_group") --> NEX("Run next")
+
+  HV("Wait for new media")
+
+  STSAV("Save to store") --> MGLEN("Saved messages count = 10?")
+
+  MGLEN -- No --> HV
+  MGLEN -- Yes --> ACTX
+```
+
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpengramJS%2Fmedia-group.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpengramJS%2Fmedia-group?ref=badge_large)
 
