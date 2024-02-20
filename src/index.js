@@ -103,7 +103,7 @@ class MediaGroup {
    * Media group plugin constructor
    * @param {MediaGroupOptions} [options] Options
    */
-  constructor (options) {
+  constructor (options = {}) {
     this[storeSymbol] = options.store ?? new Map()
     this[timeoutSymbol] = options.timeout ?? 100
     this[allowedUpdatesSymbol] = options.allowedUpdates ?? ['video', 'audio', 'photo', 'document']
