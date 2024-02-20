@@ -1,6 +1,6 @@
 {
   "name": "@opengram/media-group",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The media-group plugin lets you handle & copy media-groups (albums) with ease.",
   "main": "src/index.js",
   "scripts": {
